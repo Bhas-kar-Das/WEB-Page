@@ -1,0 +1,2866 @@
+<!--
+=========================================================
+Material Dashboard - v2.1.2
+=========================================================
+
+Product Page: https://www.creative-tim.com/product/material-dashboard
+Copyright 2020 Creative Tim (https://www.creative-tim.com)
+Coded by Creative Tim
+
+=========================================================
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Ayana Power
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+<link rel="stylesheet" href="./style.css">
+<style>
+          body {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+/*/ Scrollbar Styling /*/
+::-webkit-scrollbar {
+    width: 5px;
+        height: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #f6f4f8;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    background: #6a6e6b;
+
+}
+
+/*/ Scrollbar Styling /*/
+
+
+.logo-normal img {
+        width: 60%;
+    height: 60%;
+}
+.progress {
+    width: 68px !important;
+    height: 62px !important;
+    overflow: hidden;
+    background-color: #343434 !important;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+
+}
+.attendance {
+    width: 100%;
+    max-width: 80px;
+    height: 96px;
+    margin: 0 auto;
+}
+
+.bar {
+    position: absolute;
+    font-size: 18px;
+    color: #51a81b;
+    top: 1px;
+    left: 9px;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid #51a81b;
+    border-bottom-color: #0bf;
+    border-right-color: #3b4e52;
+}
+
+.pbar {
+    font-size: 18px;
+    color: #ec3923;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid #ec3923;
+    border-bottom-color: #0bf;
+    border-right-color: #3b4e52;
+}
+
+.instruction_alert_chart .canvasjs-chart-canvas {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 160px !important;
+    height: 125px !important;
+    margin-top: 12px;
+}
+.canvasjs-chart-credit {
+    right: 38px!important;
+    top: 132px !important;
+    color: #343434 !important;
+}
+
+.ap-bg-color{color: #fff;
+background:#222222;}
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+            margin-left: 40%;
+            /* z-index: 9999;
+            margin-top: -20%;*/
+        }
+        
+.circle-health-box{display: flex;}
+        .loadergrid {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 60px;
+            height: 60px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+            margin-left: 20%;
+            z-index: 9999;
+            margin-top: -3%;
+            display: none;
+            position: absolute;
+            left: 28%;
+            top: 23px;
+        }
+tbody#Anprtbody img {
+    width: 50px;
+}
+.fitness-boader h6 {
+    font-size: 7px;
+    margin: 10px 12px 10px 14px !important;
+}
+.fitness-boader {
+    padding: 1px;
+    height: 180px;
+    border: 1px solid #fff;
+}
+
+        .sidebar .nav p {
+            margin: 0;
+            line-height: 30px;
+            font-size: 13px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /*-----------------MY STYLE----------------*/
+
+        body {
+            background-image: linear-gradient(180deg, #ffffff, #f2f4ff);
+        }
+
+        .sidebar .nav li a,
+        .sidebar .nav li .dropdown-menu a {
+         
+            border-radius: 3px;
+            color: #ffffff;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-transform: capitalize;
+            font-size: 13px;
+            padding: 10px 15px;
+        }
+
+        .sidebar .nav i {
+            font-size: 24px;
+            float: left;
+            margin-right: 15px;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .sidebar .logo .simple-text {
+            text-transform: uppercase;
+            padding: 5px 0px;
+            display: inline-block;
+            font-size: 18px;
+            color: #ffffff;
+            white-space: nowrap;
+            font-weight: 400;
+            line-height: 30px;
+            overflow: hidden;
+            text-align: center;
+            display: block;
+        }
+.material-icon {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 3px;
+    right: 3px;
+    background: #01a4e9;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 6px #333;
+}
+
+.menu_dot {
+    width: 15px;
+    height: 15px;
+    background: #51a81b;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.red-dot{
+    background-color: #e91f1b;
+}
+        .sidebar .nav i {
+            font-size: 19px;
+            float: left;
+            margin-right: 15px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            text-align: center;
+            border-radius: 4px;
+            color: #000;
+        }
+
+        .sidebar .nav li:hover>a,
+        .sidebar .nav li .dropdown-menu a:hover,
+        .sidebar .nav li .dropdown-menu a:focus,
+        .sidebar .nav li.active>[data-toggle="collapse"] {
+            background-color: rgba(200, 200, 200, 0.2);
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+
+        .dropdown-item {
+            font-size: 13px !important;
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus,
+        .dropdown-menu a:active {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+        .table.table-hover tbody tr:hover {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+   .table_card {
+        height: 234px;
+    font-size: 10px;
+    position: relative;
+    background: #343434;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 7%);
+padding: 0px 10px 2px;
+    border-radius: 2px;
+  
+}
+.vehicle-btn a:hover{text-decoration: none;}
+
+        #tab_customers tr td img {
+            width: 40px;
+            border-radius: 50% !important;
+        }
+
+.card-head {
+    font-size: 10px;
+    color: #ffffff;
+    margin: 0px 0px 3px;
+    font-weight: 400;
+}
+
+.card-title {
+    padding: 5px 0px;
+    background: linear-gradient(to bottom, #414141 0%, #343434 100%);
+    margin: 0px 0px 2px;
+    font-size: 9px;
+    font-weight: 400;
+    color: #ffffff;
+}
+td.imgtd img {
+    /* height: 23px; */
+    width: 30px;
+}
+
+.shift_table {
+    height: 58px;
+    overflow: auto;
+}
+.c100.p85.big h4 {
+    font-size: 11px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-right: 3px;
+}
+.c100.p85.big h5 {
+    font-size: 11px;
+    margin: 0px ;
+}
+
+        .table th {
+            font-size: 12px !important;
+        }
+
+        .table tr td {
+            font-size: 12px;
+        }
+
+        .download_button {
+            background-image: linear-gradient(67deg, #4CAF50, #3de2aa);
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            padding: 12px 0px;
+            border-radius: 4px;
+            position: relative;
+
+        }
+
+        .main-panel>.footer {
+            border-top: 1px solid #e7e7e7;
+            background: #fff !important;
+        }
+
+        .btnright {
+            float: right;
+            background-image: linear-gradient(67deg, #4CAF50, #3de2aa);
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .menudiv1 {
+            width: 100%;
+            display: inline-block;
+        }
+
+        .menudiv2 {
+            width: 20%;
+            display: inline;
+        }
+.ap-table tr td {
+    font-size: 8px;
+    padding: 3px!important;
+}
+    .ap-table{ border:1px solid #fff;}
+.vehicle-btn a {
+    font-size: 9px;
+    color: #fff;
+    background: #464646;
+    padding: 4px 5px;
+    margin-right: 5px;
+    border-radius: 30px;
+    width: 131px;
+    text-align: center;
+    flex: 1 1;
+}
+
+.vehicle-btn a:hover{
+color: #fff;
+background: #2d2d2d;
+}
+
+.fire-smoke {
+
+    display: flex;
+}
+.fire-btn {
+    display: flex;
+}
+
+
+.instruction-btn {
+    color: #fff;
+    width: 130px;
+    margin: 64px auto 0px;
+    padding: 1px 0px;
+    text-align: center;
+    height: 52px;
+}
+.vegetation-btn {
+    position: absolute;
+    background: #10292e;
+    color: #fff;
+    width: 125px;
+    margin: 3px;
+    padding: 1px 0px;
+    text-align: center;
+    bottom: 0px;
+    left: 115px;
+}
+.vehicle-btn {
+    position: absolute;
+    bottom: 3px;
+    display: flex;
+}
+   .fire-color:hover {color: #fff;
+    background: #2d2d2d;}
+.smoke-color:hover{color: #fff;
+    background: #2d2d2d;}
+.fire-color {
+    text-align: center;
+    width: 70px;
+    font-size: 10px;
+    background: #464646;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 4px 12px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 4px;
+}
+.attendance-btn {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+}
+.attendance-btn h6 {
+    font-size: 6px;
+    margin-left: 67px;
+}
+
+.attendance-btn a {
+    margin-top: 8px;
+    font-size: 9px;
+    height: 11px;
+    color: #fff;
+    background: #01a2ea;
+    padding: 0px 5px 0px 5px;
+    display: inline-block;
+}
+.crowd-btn {
+    position: absolute;
+    background: #10292e;
+    color: #fff;
+    width: 125px;
+    margin: 3px;
+    bottom: 0px;
+    left: 115px;
+    padding: 1px 10px;
+    text-align: center;
+}
+.crowd_alert{color:#4ca030 !important;
+    font-size: 22px;
+
+}
+.instruction-section{display: flex;}
+.instruction_alert{color:#fff!important;
+    font-size: 22px;}
+.vegetation-alert{color:#4ca030 !important;
+    font-size: 22px;}
+
+.fire-margin{margin-bottom: 0px!important;}
+
+.smoke-btn {
+    display: flex;
+    padding: 0px 0px 0px 132px;
+}
+
+.cleaning-alerts {
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+}
+
+
+.cleaning-alert-blue {
+    background: #2176b6;
+    height: 6px;
+    width: 50px;
+}
+.cleaning-alert-orange {
+    background: #fe7f0e;
+    height: 6px;
+    width: 50px;
+}
+
+.cleaning-alert-green {
+    background: #2aa12d;
+    height: 6px;
+    width: 50px;
+}
+
+.module_alert {
+    margin: -7px 21px;
+    font-size: 14px;
+}
+/*------------------circle cord----------------*/
+*, *:after, *.before {
+     box-sizing: border-box;
+
+}
+
+ .c100 {
+     box-shadow: inset 0 0 0 4px #9dca2f;
+}
+
+ .circle {
+width: 25%;
+    margin: 0 auto;
+    max-width: 55px;
+     height: 55px;
+
+
+    /* border: 6px solid #937635;
+    */
+     -webkit-transition: all 100ms cubic-bezier(0.27, 0.38, 0.82, 0.67);
+     -moz-transition: all 100ms cubic-bezier(0.27, 0.38, 0.82, 0.67);
+     -ms-transition: all 100ms cubic-bezier(0.27, 0.38, 0.82, 0.67);
+     -o-transition: all 100ms cubic-bezier(0.27, 0.38, 0.82, 0.67);
+     transition: all 100ms cubic-bezier(0.27, 0.38, 0.82, 0.67);
+     position: relative;
+     padding: 0px;
+}
+
+ .circle.health .c100 .bar, .circle.health .c100 .fill {
+     border-color: #9dca2f;
+}
+ .circle.stamina .c100 .bar, .circle.stamina .c100 .fill {
+     border-color: #2ecc71;
+}
+ .container > .more {
+     width: 600px;
+     height: 200px;
+     background: #000;
+     background: rgba(112, 96, 96, 0.8);
+     position: absolute;
+     margin: auto;
+     top: 0;
+     bottom: 0;
+     left: 130px;
+     padding-left: 160px;
+}
+.int_alert {
+    background: #464646;
+    height: 18px;
+    padding: 4px 0px;
+    width: 76px;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+    height: 53px !important;
+    width: 100% !important;
+}
+.fire_alert {
+    position: absolute;
+    bottom: 3px;
+    left: 35px;
+}
+.smoke_alert {
+    position: absolute;
+    bottom: 1px;
+    right: 12px;
+}
+
+/**/
+ .rect-auto, .c100.p51 .slice, .c100.p52 .slice, .c100.p53 .slice, .c100.p54 .slice, .c100.p55 .slice, .c100.p56 .slice, .c100.p57 .slice, .c100.p58 .slice, .c100.p59 .slice, .c100.p60 .slice, .c100.p61 .slice, .c100.p62 .slice, .c100.p63 .slice, .c100.p64 .slice, .c100.p65 .slice, .c100.p66 .slice, .c100.p67 .slice, .c100.p68 .slice, .c100.p69 .slice, .c100.p70 .slice, .c100.p71 .slice, .c100.p72 .slice, .c100.p73 .slice, .c100.p74 .slice, .c100.p75 .slice, .c100.p76 .slice, .c100.p77 .slice, .c100.p78 .slice, .c100.p79 .slice, .c100.p80 .slice, .c100.p81 .slice, .c100.p82 .slice, .c100.p83 .slice, .c100.p84 .slice, .c100.p85 .slice, .c100.p86 .slice, .c100.p87 .slice, .c100.p88 .slice, .c100.p89 .slice, .c100.p90 .slice, .c100.p91 .slice, .c100.p92 .slice, .c100.p93 .slice, .c100.p94 .slice, .c100.p95 .slice, .c100.p96 .slice, .c100.p97 .slice, .c100.p98 .slice, .c100.p99 .slice, .c100.p100 .slice {
+     clip: rect(auto, auto, auto, auto);
+}
+ .pie, .c100 .bar, .c100.p51 .fill, .c100.p52 .fill, .c100.p53 .fill, .c100.p54 .fill, .c100.p55 .fill, .c100.p56 .fill, .c100.p57 .fill, .c100.p58 .fill, .c100.p59 .fill, .c100.p60 .fill, .c100.p61 .fill, .c100.p62 .fill, .c100.p63 .fill, .c100.p64 .fill, .c100.p65 .fill, .c100.p66 .fill, .c100.p67 .fill, .c100.p68 .fill, .c100.p69 .fill, .c100.p70 .fill, .c100.p71 .fill, .c100.p72 .fill, .c100.p73 .fill, .c100.p74 .fill, .c100.p75 .fill, .c100.p76 .fill, .c100.p77 .fill, .c100.p78 .fill, .c100.p79 .fill, .c100.p80 .fill, .c100.p81 .fill, .c100.p82 .fill, .c100.p83 .fill, .c100.p84 .fill, .c100.p85 .fill, .c100.p86 .fill, .c100.p87 .fill, .c100.p88 .fill, .c100.p89 .fill, .c100.p90 .fill, .c100.p91 .fill, .c100.p92 .fill, .c100.p93 .fill, .c100.p94 .fill, .c100.p95 .fill, .c100.p96 .fill, .c100.p97 .fill, .c100.p98 .fill, .c100.p99 .fill, .c100.p100 .fill {
+     position: absolute;
+     width: 0.84em;
+     height: 0.84em;
+     clip: rect(0em, 0.5em, 1em, 0em);
+     border-radius: 50%;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     transform: rotate(0deg);
+}
+ .pie-fill, .c100.p51 .bar:after, .c100.p51 .fill, .c100.p52 .bar:after, .c100.p52 .fill, .c100.p53 .bar:after, .c100.p53 .fill, .c100.p54 .bar:after, .c100.p54 .fill, .c100.p55 .bar:after, .c100.p55 .fill, .c100.p56 .bar:after, .c100.p56 .fill, .c100.p57 .bar:after, .c100.p57 .fill, .c100.p58 .bar:after, .c100.p58 .fill, .c100.p59 .bar:after, .c100.p59 .fill, .c100.p60 .bar:after, .c100.p60 .fill, .c100.p61 .bar:after, .c100.p61 .fill, .c100.p62 .bar:after, .c100.p62 .fill, .c100.p63 .bar:after, .c100.p63 .fill, .c100.p64 .bar:after, .c100.p64 .fill, .c100.p65 .bar:after, .c100.p65 .fill, .c100.p66 .bar:after, .c100.p66 .fill, .c100.p67 .bar:after, .c100.p67 .fill, .c100.p68 .bar:after, .c100.p68 .fill, .c100.p69 .bar:after, .c100.p69 .fill, .c100.p70 .bar:after, .c100.p70 .fill, .c100.p71 .bar:after, .c100.p71 .fill, .c100.p72 .bar:after, .c100.p72 .fill, .c100.p73 .bar:after, .c100.p73 .fill, .c100.p74 .bar:after, .c100.p74 .fill, .c100.p75 .bar:after, .c100.p75 .fill, .c100.p76 .bar:after, .c100.p76 .fill, .c100.p77 .bar:after, .c100.p77 .fill, .c100.p78 .bar:after, .c100.p78 .fill, .c100.p79 .bar:after, .c100.p79 .fill, .c100.p80 .bar:after, .c100.p80 .fill, .c100.p81 .bar:after, .c100.p81 .fill, .c100.p82 .bar:after, .c100.p82 .fill, .c100.p83 .bar:after, .c100.p83 .fill, .c100.p84 .bar:after, .c100.p84 .fill, .c100.p85 .bar:after, .c100.p85 .fill, .c100.p86 .bar:after, .c100.p86 .fill, .c100.p87 .bar:after, .c100.p87 .fill, .c100.p88 .bar:after, .c100.p88 .fill, .c100.p89 .bar:after, .c100.p89 .fill, .c100.p90 .bar:after, .c100.p90 .fill, .c100.p91 .bar:after, .c100.p91 .fill, .c100.p92 .bar:after, .c100.p92 .fill, .c100.p93 .bar:after, .c100.p93 .fill, .c100.p94 .bar:after, .c100.p94 .fill, .c100.p95 .bar:after, .c100.p95 .fill, .c100.p96 .bar:after, .c100.p96 .fill, .c100.p97 .bar:after, .c100.p97 .fill, .c100.p98 .bar:after, .c100.p98 .fill, .c100.p99 .bar:after, .c100.p99 .fill, .c100.p100 .bar:after, .c100.p100 .fill {
+     -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+     -ms-transform: rotate(180deg);
+     -o-transform: rotate(180deg);
+     transform: rotate(180deg);
+}
+.c100 {
+    position: relative;
+    font-size: 60px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    float: left;
+}
+ .c100 *, .c100 *:before, .c100 *:after {
+     -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+     box-sizing: content-box;
+}
+ .c100.center {
+     float: none;
+     margin: 0 auto;
+}
+
+ .c100.small {
+     font-size: 80px;
+}
+ .c100 > span {
+     position: absolute;
+     width: 100%;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     color: #fff;
+     width: 5em;
+     line-height: 5em;
+     font-size: 0.2em;
+     display: block;
+     text-align: center;
+     white-space: nowrap;
+     background: -webkit-linear-gradient(top, #fff 0, #fff 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-family: "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
+}
+.smoke-color {
+        text-align: center;
+    right: 18px;
+    background: #464646;
+    padding: 4px 12px;
+    width: 70px;
+    color: #fff;
+    height: 18px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 3px;
+    font-size: 10px;
+}
+ .c100:after {
+     position: absolute;
+     top: 0.08em;
+     left: 0.08em;
+     display: block;
+     content: " ";
+     border-radius: 50%;
+     width: 0.84em;
+     height: 0.84em;
+}
+ .c100 .slice {
+     position: absolute;
+     width: 1em;
+     height: 1em;
+     clip: rect(0em, 1em, 1em, 0.5em);
+}
+
+/*------------------ end circle cord----------------*/
+
+
+/*----------------------------progress--------------*/
+.progress{
+  position: relative;
+margin: 0px 4px !important;
+  text-align: center;
+  box-shadow: none !important;
+}
+.progress p {
+    margin: 0px!important;
+}
+.barOverflow {
+    position: relative;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+}
+.bar{
+  position: absolute;
+    font-size: 18px;
+    color:#51a81b;
+    top: 1px;
+    left: 6px;
+    width: 63px;
+    height: 63px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+    border: 5px solid #51a81b;    /* half gray, */
+border-right-color: #3b4e52;
+}
+
+.card-header-icon{display: flex;}
+.pbar {
+    font-size: 18px;
+    color:#ec3923;
+    position: absolute;
+    top: 1px;
+    left: 6px;
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid #ec3923;
+    border-right-color: #3b4e52;
+}
+.bar p {
+    margin-top: 12px;
+}
+.bar h6 {
+    font-size: 14px;
+    margin-top: 14px;
+}
+.attendance p {
+    text-align: center;
+       margin-top: 8px!important;
+}
+.menu-footer{    position: absolute;
+    color: #b8b6b7;
+    bottom: 20px;
+    font-size: 12px;
+text-align:center;
+left: 20px;}
+
+.item_card{
+height: 180px;
+border: 1px solid #fff;
+padding: 6px 0px;
+}
+.vehicle-btn p{position: absolute;
+bottom:0px;
+left: 50px;}
+
+.attendance-box {
+    position: absolute;
+    bottom: 3px;
+    right: 4px;
+         font-size: 9px;
+}
+
+.attendance-box a:hover {
+    color: #fff;
+    background: #2d2d2d;
+}
+.attendance-box a{
+ 
+    color: #fff;
+    background: #464646;
+    padding: 4px 5px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 30px;
+
+}
+.barOver{position: relative;
+    overflow: hidden;
+    width: 86px;
+    margin-bottom: -14px;
+}
+.fire-no{margin-left: 5px;}
+
+.att-box {
+    background: #454545;
+    border: 2px solid #343434;
+    padding: 2px;
+}
+.att-box-name {
+    background: #454545;
+    border: 2px solid #343434;
+    padding: 2px;
+    font-size: 9px;
+}
+.att-table{width:100%; padding:5px;
+ text-align: center; margin-top:5px;}
+.shift p {
+    margin: -5px 0px -7px 0px;
+    font-size: 9px;
+    padding-left: 4px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 250px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff !important;
+  font-size: 40px !important;
+  font-weight: bold;
+  transition: 0.3s;
+  opacity: 1!important;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ap-logout{background: #464646;
+position: absolute;
+    bottom:100px;
+
+display: flex;
+border-radius: 50px;
+  text-align: center;
+left: 60px;}
+
+.nav-logout{    border-radius: 3px;
+    color: #ffffff;
+ 
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 2px 10px 2px 10px;
+    justify-content: center;
+        display: flex;
+    width: 100%;
+
+
+}
+.nav-logout i{font-size: 19px;
+    float: left;
+
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;}
+    .vehicle-btn a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-logout p {
+    margin: 6px 0px;
+}
+.nav-logout:hover{color:#fff;
+text-decoration:none; }
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+  .canvasjs-chart-credit
+{
+    display: none !important;
+}}
+
+
+
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sonar {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+body {
+  font-size: 0.9rem;
+}
+.page-wrapper .sidebar-wrapper,
+.sidebar-wrapper .sidebar-brand > a,
+.sidebar-wrapper .sidebar-dropdown > a:after,
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before,
+.sidebar-wrapper ul li a i,
+.page-wrapper .page-content,
+.sidebar-wrapper .sidebar-search input.search-menu,
+.sidebar-wrapper .sidebar-search .input-group-text,
+.sidebar-wrapper .sidebar-menu ul li a,
+#show-sidebar,
+#close-sidebar {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/*----------------page-wrapper----------------*/
+
+.page-wrapper {
+  height: 100vh;
+}
+
+.page-wrapper .theme {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.page-wrapper .theme.chiller-theme {
+  background: #1e2229;
+}
+
+/*----------------toggeled sidebar----------------*/
+
+.page-wrapper.toggled .sidebar-wrapper {
+  left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-wrapper.toggled .page-content {
+    padding-left: 220px;
+        background: #1f1f1f;
+        height: 100%;
+  }
+}
+/*----------------show sidebar button----------------*/
+#show-sidebar {
+  position: fixed;
+  left: 0;
+  top: 10px;
+  border-radius: 0 4px 4px 0px;
+  width: 35px;
+  transition-delay: 0.3s;
+}
+.page-wrapper.toggled #show-sidebar {
+  left: -40px;
+}
+/*----------------sidebar-wrapper----------------*/
+
+.sidebar-wrapper {
+  width: 260px;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 999;
+}
+
+.sidebar-wrapper ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-wrapper a {
+  text-decoration: none;
+}
+
+/*----------------sidebar-content----------------*/
+
+.sidebar-content {
+  max-height: calc(100% - 30px);
+  height: calc(100% - 30px);
+  overflow-y: auto;
+  position: relative;
+}
+
+.sidebar-content.desktop {
+  overflow-y: hidden;
+}
+
+/*--------------------sidebar-brand----------------------*/
+
+.sidebar-wrapper .sidebar-brand {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-wrapper .sidebar-brand > a {
+  text-transform: uppercase;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.sidebar-wrapper .sidebar-brand #close-sidebar {
+  cursor: pointer;
+  font-size: 20px;
+}
+/*--------------------sidebar-header----------------------*/
+
+.sidebar-wrapper .sidebar-header {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.sidebar-wrapper .sidebar-header .user-pic {
+  float: left;
+  width: 60px;
+  padding: 2px;
+  border-radius: 12px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.sidebar-wrapper .sidebar-header .user-pic img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-wrapper .sidebar-header .user-info {
+  float: left;
+}
+
+.sidebar-wrapper .sidebar-header .user-info > span {
+  display: block;
+}
+
+.sidebar-wrapper .sidebar-header .user-info .user-role {
+  font-size: 12px;
+}
+
+.sidebar-wrapper .sidebar-header .user-info .user-status {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.sidebar-wrapper .sidebar-header .user-info .user-status i {
+  font-size: 8px;
+  margin-right: 4px;
+  color: #5cb85c;
+}
+
+/*-----------------------sidebar-search------------------------*/
+
+.sidebar-wrapper .sidebar-search > div {
+  padding: 10px 20px;
+}
+
+/*----------------------sidebar-menu-------------------------*/
+
+.sidebar-wrapper .sidebar-menu {
+  padding-bottom: 10px;
+}
+
+.sidebar-wrapper .sidebar-menu .header-menu span {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 15px 20px 5px 20px;
+  display: inline-block;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 30px 8px 20px;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a i {
+  margin-right: 10px;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
+  display: inline-block;
+  animation: swing ease-in-out 0.5s 1 alternate;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
+  font-style: normal;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background: 0 0;
+  position: absolute;
+  right: 15px;
+  top: 14px;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+  padding: 5px 0;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
+  padding-left: 25px;
+  font-size: 13px;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
+  content: "\f111";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-style: normal;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
+  font-size: 8px;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a span.label,
+.sidebar-wrapper .sidebar-menu ul li a span.badge {
+  float: right;
+  margin-top: 8px;
+  margin-left: 5px;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .badge,
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .label {
+  float: right;
+  margin-top: 0px;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-submenu {
+  display: none;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a:after {
+  transform: rotate(90deg);
+  right: 17px;
+}
+
+/*--------------------------side-footer------------------------------*/
+
+.sidebar-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+}
+
+.sidebar-footer > a {
+  flex-grow: 1;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+
+.sidebar-footer > a .notification {
+  position: absolute;
+  top: 0;
+}
+
+.badge-sonar {
+  display: inline-block;
+  background: #980303;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  top: 0;
+}
+
+.badge-sonar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #980303;
+  opacity: 0;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: sonar 1.5s infinite;
+}
+
+/*--------------------------page-content-----------------------------*/
+
+.page-wrapper .page-content {
+  display: inline-block;
+  width: 100%;
+  padding-left: 0px;
+
+}
+
+.page-wrapper .page-content > div {
+ padding: 0px 0px 40px 40px;
+}
+
+.page-wrapper .page-content {
+  overflow-x: hidden;
+  background: #000;
+  height: 100%;
+}
+
+/*------scroll bar---------------------*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #525965;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525965;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/*-----------------------------chiller-theme-------------------------------------------------*/
+
+.chiller-theme .sidebar-wrapper {
+    background: #2b2b2b;
+}
+
+.chiller-theme .sidebar-wrapper .sidebar-header,
+.chiller-theme .sidebar-wrapper .sidebar-search,
+.chiller-theme .sidebar-wrapper .sidebar-menu {
+    border-top: 1px solid #3a3f48;
+}
+
+.chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-role,
+.chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-status,
+.chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text,
+.chiller-theme .sidebar-wrapper .sidebar-brand>a,
+.chiller-theme .sidebar-wrapper .sidebar-menu ul li a,
+.chiller-theme .sidebar-footer>a {
+    color: #818896;
+}
+
+.chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover>a,
+.chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a,
+.chiller-theme .sidebar-wrapper .sidebar-header .user-info,
+.chiller-theme .sidebar-wrapper .sidebar-brand>a:hover,
+.chiller-theme .sidebar-footer>a:hover i {
+    color: #b8bfce;
+}
+
+.page-wrapper.chiller-theme.toggled #close-sidebar {
+    color: #bdbdbd;
+}
+
+.page-wrapper.chiller-theme.toggled #close-sidebar:hover {
+    color: #ffffff;
+}
+
+.chiller-theme .sidebar-wrapper ul li:hover a i,
+.chiller-theme .sidebar-wrapper .sidebar-dropdown .sidebar-submenu li a:hover:before,
+.chiller-theme .sidebar-wrapper .sidebar-search input.search-menu:focus+span,
+.chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i {
+    color: #16c7ff;
+    text-shadow:0px 0px 10px rgba(22, 199, 255, 0.5);
+}
+
+.chiller-theme .sidebar-wrapper .sidebar-menu ul li a i,
+.chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
+.chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
+    background: #3a3f48;
+    color:#fff;
+}
+a.nav-link span {
+    color: #fff;
+}
+li.nav-item {
+    position: relative;
+}
+
+
+.chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
+    color: #6c7b88;
+}
+
+.chiller-theme .sidebar-footer {
+    background: #3a3f48;
+    box-shadow: 0px -1px 5px #282c33;
+    border-top: 1px solid #464a52;
+}
+
+.chiller-theme .sidebar-footer>a:first-child {
+    border-left: none;
+}
+
+.chiller-theme .sidebar-footer>a:last-child {
+    border-right: none;
+}
+.fa-bars {
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+      
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="logo">
+                <a href="" class="simple-text logo-normal">
+                    <img src="../assets/img/logo.png">
+                </a>
+            </div>
+ 
+      </div>
+      <!-- sidebar-header  -->
+
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+      
+
+  
+   
+          <li class="nav-item">
+  <a class="nav-link" href="./dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+         <i class="material-icons">dashboard</i>
+           <span>Pavagada-300MW</span>
+            </a>
+                <div class="menu_dot"></div>
+
+          </li>
+  
+              
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="material-icons">dashboard</i>
+                            <span>Ananthapur-250MW</span>
+
+                        </a>
+                        <div class="menu_dot red-dot"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="material-icons">content_paste</i>
+                            <span>Bikaner-300MW</span>
+                        </a>
+                        <div class="menu_dot red-dot"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="material-icons">notifications</i>
+                            <span>Tungabhadra-20MW</span>
+                        </a>
+                        <div class="menu_dot red-dot"></div>
+                    </li>
+        
+   
+   
+ 
+        </ul>
+        <div class="ap-logout">
+                        <a class="nav-logout" href="./Login.html">
+                            <i class="material-icons">power_settings_new</i>
+                            <p>logout</p>
+                        </a>
+                    </div>
+                    <div class="menu-footer">©2021 powered by CamfyVision <br>Innovations</div>
+   
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+
+  </nav>
+  <!-- sidebar-wrapper  -->
+
+  <main class="page-content">
+    <div class="container-fluid">
+   <div class="ap-bg-color">
+                <div class="container-fluid">
+
+                    <div class="row"> 
+
+     <div class="col-md-4 mt-2 p-1 m-0">
+                            <div class="table_card mb-0">
+
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Facial Recognition & Analytics</h4>
+                                        <a href="./dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="item_card">
+                                        <div class="card-header-warning card-header-icon">
+                                    <!--         <div class="row">
+                                                <div class="col-3">
+                                                    <p class="card-category">Employee</p>
+                                                    <h3 class="item_card_count">
+                                                        <span id="total">0</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="card-category">Present</p>
+                                                    <h3 class="item_card_count">
+                                                        <span id="lblpresent">0</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="card-category">Absent</p>
+                                                    <h3 class="item_card_count">
+                                                        <span id="absentemp">0</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="card-category">Late</p>
+                                                    <h3 class="item_card_count">
+                                                        <span id="latecommers">0</span>
+                                                    </h3>
+                                                </div>
+                                            </div> -->
+                                            <div class="attendance">
+                                            <a  href="./AllEmployee.html" class="progress">
+                                                <div class="barOverflow">
+                                                    <div class="bar"><h6 id="total">0</h6></div>
+                                                </div>
+
+                                            </a>
+                                            <p>Employee</p></div>
+
+
+                                             <div class="attendance">
+                                                <a  href="./dashboard.html" class="progress">
+                                                <div class="barOverflow">
+                                                    <div class="bar"><p id="lblpresent">0</p></div>
+                                                </div>
+
+                                            </a>
+                                            <p>Present</p>
+                                                </div>
+                                                <div class="attendance">
+                                        <a  href="./absent.html" class="progress">
+                                        <div class="barOverflow">
+                                            <div class="pbar"><p id="absentemp">0</p></div>
+                                        </div>
+                                        </a>
+                                                    <p>Absent</p>
+                                                </div>
+                                            <div class="attendance">
+                                        <a  href="#" class="progress">
+                                        <div class="barOverflow">
+                                            <div class="pbar"><p id="latecommers">0</p></div>
+                                        </div>
+
+                                        </a>
+                                        <p>Late</p>
+                                        </div>
+                                        
+                                        </div>
+
+                                        <div class="shift">
+    <p>Shiftwise Attendance</p>
+</div>
+   <div class="shift_table">                                 
+<table  class="att-table" id="shiftName">
+  
+
+
+
+  
+
+</table>
+</div>
+
+
+
+                                       
+                                                 <div class="vehicle-btn">
+                                                    <a href="./dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">Attendance</a>
+                                 
+                                                </div>
+                                                <div class="attendance-box"><a href="./MonthlyReport.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">Monthly Attendance</a>
+                                                </div>
+
+
+
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                                 <div class="col-md-4 mt-2 p-1 m-0">
+                            <div class="table_card mb-0">
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Vehicle Analytics</h4>
+                                        <a href="./VehicleDetail.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                        <div class="table-responsive" style="height: 180px; overflow-y: auto;border: 1px solid #fff;">
+                                            <table class="table table-hover table-bordered">
+                                                <tbody class="ap-table" id="Anprtbody">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="vehicle-btn">
+                                   <a href="./tables.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">Vehicle ANPR Reports</a><a href="./VehicleDetail.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">Monthly Deatils</a><a href="./mapping.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">vehicle Mapping</a>
+                               </div>
+                            </div>
+                    </div>
+                     <div class="col-md-4 mt-2 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Fire & Smoke detection</h4>
+                                        <a href="./fire.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                         style="height: 180px; overflow-y: auto; border:1px solid #fff;">
+                                        <table id="" class="table fire-margin table-hover table-bordered">
+                                            <tbody class="ap-table" id="tfirebody">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="fire-smoke">
+                                        <div class="fire-btn fire-color">
+                                            <h2 class="card-head">Fire </h2>
+                                            <div class="fire_alert" id="fire_alert"> 0</div>
+                                        </div>
+                                        <div class="smoke-btn smoke-color">
+                                            <h2 class="card-head ">Smoke</h2>
+                                            <div class="smoke_alert" id="smoke_alert">0</div>
+                                        </div>
+                                    </div>
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                         <div class="col-md-4  p-1 m-0">
+                            <div class="table_card mb-0">
+                                
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Crowd Analysis</h4>
+                                        <a href="./crowd.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                    style="height: 180px; overflow-y: auto; border: 1px solid #fff;">
+                                   <table id="" class="table table-hover table-bordered">
+                                       <tbody class="ap-table" id="crowdtbody">
+                                       </tbody>
+                                   </table>
+                               </div>
+                              
+                               <div class="cleaning-alerts">
+                                <div class="cleaning-alert-blue"></div>
+                                <div class="cleaning-alert-orange"></div>
+                                <div class="cleaning-alert-green"></div>
+                                <a class="module_alert" id="crowd_alert"></a>
+                            </div>
+                               
+                              
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Vegetation Analytics</h4>
+                                        <a href="./OverGrass.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                         style="height: 180px; overflow-y: auto; border: 1px solid #fff;">
+                                        <table id="" class="table table-hover table-bordered">
+                                            <tbody class="ap-table" id="vegtbody">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="cleaning-alerts">
+                                        <div class="cleaning-alert-blue"></div>
+                                        <div class="cleaning-alert-orange"></div>
+                                        <div class="cleaning-alert-green"></div>
+                                        <a class="module_alert" id="vegetation_alert"></a>
+                                    </div>
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                         <div class="col-md-4 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Intrusion Detection</h4>
+                                        <a href="./Detection.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                         style="height: 180px; overflow-y: auto; border:1px solid #fff;   ">
+                                        <table id="" class="table table-hover table-bordered">
+                                            <tbody class="ap-table" id="instbody">
+                                            </tbody>
+                                                       <div class="instruction-section">
+                                    <div id="chartContainer" class="instruction_alert_chart" style="width: 150px !important;
+                                    height: 118px !important;
+                                    margin-left: 25px;"></div>
+                             <div class="instruction-btn">
+                                        <h2 class="card-head int_alert pl-0">Intrusion</h2>
+                                        <a class="instruction_alert" id="instruction_alert"></a>
+                                    </div>
+                                   
+                                       
+                                    
+                                </div>
+                                        </table>
+                                    </div>
+                         
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                         <div class="col-md-4 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Module Cleaning Alerts
+                                        </h4>
+                                        <a href="./Cleaning.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                         style="height: 180px; overflow-y: auto; border:1px solid #fff;">
+                                        <table id="" class="table table-hover table-bordered">
+                                            <tbody class="ap-table" id="cleantbody">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="cleaning-alerts">
+                                        <div class="cleaning-alert-blue"></div>
+                                        <div class="cleaning-alert-orange"></div>
+                                        <div class="cleaning-alert-green"></div>
+
+                       <!--                  <h2 class="card-head  pl-0">Defect Alerts</h2> -->
+                                        <a class="module_alert" id="module_alert"></a>
+                                    </div>
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                         <div class="col-md-4 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Module Defect Detection</h4>
+                                        <a href="./moduleDefect.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk"><i class="material-icon"></i></a>
+                                    </div>
+                                    <div class="table-responsive" id="contents"
+                                         style="height: 180px; overflow-y: auto; border: 1px solid #fff;">
+                                        <table id="" class="table table-hover table-bordered">
+                                            <tbody class="ap-table" id="moduletbody">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                   
+                                    <div class="cleaning-alerts">
+                                        <div class="cleaning-alert-blue"></div>
+                                        <div class="cleaning-alert-orange"></div>
+                                        <div class="cleaning-alert-green"></div>
+                                        <a class="module_alert" id="defect_alert"></a>
+                                    </div>
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-1 m-0">
+                            <div class="table_card mb-0">
+
+          <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Fitness Status</h4>
+
+
+
+<div class="fitness-boader">
+
+
+
+
+
+                                        <h6>Pavagada 300MW-Phase-1</h6>
+                                        <div class="circle-health-box">
+
+  <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>2/2</h5>
+         <h5 style="font-size: 6px">Bosch Camera</h5>
+        </span>
+
+      <div class="slice">
+ <!--        <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+    <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>12/12</h5>
+         <h5 style="font-size: 6px">Gate Camera</h5></span>
+
+      <div class="slice">
+   <!--      <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+    <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>5/5</h5>
+         <h5 style="font-size: 6px">Ubiquiti</h5></span>
+
+      <div class="slice">
+     <!--    <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>  <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>8/8</h5>
+        <h5 style="font-size: 6px">Anal. Soft.</h5></span>
+
+      <div class="slice">
+  <!--       <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+
+                                    </div>
+                                          <h6>Pavagada 300MW-Phase-2</h6>
+                                                             <div class="circle-health-box">
+
+    <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>2/2</h5>
+         <h5 style="font-size: 6px">Bosch Camera</h5></span>
+
+      <div class="slice">
+ <!--        <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+    <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>12/12</h5>
+         <h5 style="font-size: 6px">Gate Camera</h5></span>
+
+      <div class="slice">
+<!--         <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+    <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>4/4</h5>
+         <h5 style="font-size: 6px">Ubiquiti</h5></span>
+
+      <div class="slice">
+<!--         <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>     
+   <div class="circle health">
+    <div class="c100 p85 big">
+      <span><h4>Running</h4><h5>8/8</h5>
+         <h5 style="font-size: 6px">Anal. Soft.</h5></span>
+
+      <div class="slice">
+  <!--       <div class="bar"></div> -->
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+
+                                    </div>
+                                      <div class="cleaning-alerts">
+                                        <div class="cleaning-alert-blue"></div>
+                                        <div class="cleaning-alert-orange"></div>
+                                        <div class="cleaning-alert-green"></div>
+                                        <a class="module_alert">All clear</a>
+                                    </div>
+  
+                                
+                                </div>
+
+                        
+
+                          
+                  
+                         
+</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                                    
+                        
+
+</div>
+</div></div>
+
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script><script  src="./script.js"></script>
+  <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Plugin for the momentJs  -->
+        <script src="../assets/js/plugins/moment.min.js"></script>
+        <!--  Plugin for Sweet Alert -->
+        <script src="../assets/js/plugins/sweetalert2.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+        <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+        <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+        <!--  Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../assets/js/plugins/nouislider.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="../assets/js/plugins/arrive.min.js"></script>
+
+        <!-- Chartist JS -->
+        <script src="../assets/js/plugins/chartist.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <script src="../assets/demo/demo.js"></script>
+    
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+            rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+            rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <script>
+            $(document).ready(function () {
+                var envUrl = "http://ayanapower-001-site1.itempurl.com"
+                var date = new Date();
+                var enddatePicker = moment(date).format('YYYY-MM-DD');
+                var startdatePicker = moment(date).subtract(1, 'months').format('YYYY-MM-DD');
+                GetAnprData();
+                getpresentEmp();
+                getFireData();
+                getCrowdData();
+                getOverGrassData();
+                getDetectionData();
+                getCleaningData();
+                getmoduleDefectData();
+                getRegisterdEmpCount();
+                GetEmpShiftCount();
+                getReportMonthlyPerDayWise('',startdatePicker, enddatePicker);
+            });
+        </script>
+
+
+
+
+        <script>
+            function GetEmpShiftCount(){
+                var URL = 'http://ayanapower-001-site1.itempurl.com/api/Employee/GetEmpShiftCount';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {
+                    var shiftname = "";
+                    shiftname += '<tr>';
+                    for (var i = 0; i < Data.length; i++) {                                              
+                        shiftname += '<td class="att-box-name">'+ Data[i].shiftName +'</td>';                         
+                    }
+                    shiftname += '</tr>';
+                    shiftname += '<tr>';
+                    for (var i = 0; i < Data.length; i++) {                                              
+                        shiftname += '<td class="att-box">'+ Data[i].empCount +'</td>';                     
+                    }
+                    shiftname += '</tr>';
+                    $('#shiftName').append(shiftname);
+                    $("#loader_shift").css('display', 'none');
+                    
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+            }
+            var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+
+        function popUp(img) {
+            modal.style.display = "block";
+            modalImg.src = img;
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+            function getReportMonthlyPerDayWise(filtrtype, fromdate, enddate) {
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Employee/GetRecogMonthlyReportDatewise?startdate=' + fromdate + '&enddate=' + enddate;
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {
+                    var day1 = []; 
+                    var day2 = []; 
+                    var day3 = []; 
+                    var day4 = []; 
+                    var day5 = []; 
+                    var day6 = []; 
+                    var day7 = []; 
+                    var day8 = []; 
+                    var day9 = []; 
+                    var day10 = []; 
+                    var day11 = [];
+                    var day12 = [];
+                    var day13 = [];
+                    var day14 = [];
+                    var day15 = [];
+                    var day16 = [];
+                    var day17 = [];
+                    var day18 = [];
+                    var day19 = [];
+                    var day20 = [];
+                    var day21 = [];
+                    var day22 = [];
+                    var day23 = [];
+                    var day24 = [];
+                    var day25 = [];
+                    var day26 = [];
+                    var day27 = [];
+                    var day28 = [];
+                    var day29 = [];
+                    var day30 = [];
+                    var day31 = [];
+                    
+                    for (var i = 0; i < Data.length; i++) {
+                        // let increment = i + 1;
+                        day1.push(Data[i].day1);
+                        day2.push(Data[i].day2);
+                        day3.push(Data[i].day3);
+                        day4.push(Data[i].day4);
+                        day5.push(Data[i].day5);
+                        day6.push(Data[i].day6);
+                        day7.push(Data[i].day7);
+                        day8.push(Data[i].day8);
+                        day9.push(Data[i].day9);
+                        day10.push(Data[i].day10);
+                        day11.push(Data[i].day11);
+                        day12.push(Data[i].day12);
+                        day13.push(Data[i].day13);
+                        day14.push(Data[i].day14);
+                        day15.push(Data[i].day15);
+                        day16.push(Data[i].day16);
+                        day17.push(Data[i].day17);
+                        day18.push(Data[i].day18);
+                        day19.push(Data[i].day19);
+                        day20.push(Data[i].day20);
+                        day21.push(Data[i].day21);
+                        day22.push(Data[i].day22);
+                        day23.push(Data[i].day23);
+                        day24.push(Data[i].day24);
+                        day25.push(Data[i].day25);
+                        day26.push(Data[i].day26);
+                        day27.push(Data[i].day27);
+                        day28.push(Data[i].day28);
+                        day29.push(Data[i].day29);
+                        day30.push(Data[i].day30);
+                        day31.push(Data[i].day31);      
+                    }
+                    var dayss1 = 0;
+                    for(var i = 0; i < day1.length; i++){
+                        if(day1[i] != "--"){
+                            dayss1 = dayss1 + 1;
+                        }
+                    }
+                    var dayss2 = 0;
+                    for(var i = 0; i < day2.length; i++){
+                        if(day2[i] != "--"){
+                            dayss2 = dayss2 + 1;
+                        }
+                    }
+                    var dayss3 = 0;
+                    for(var i = 0; i < day3.length; i++){
+                        if(day3[i] != "--"){
+                            dayss3 = dayss3 + 1;
+                        }
+                    }
+                    var dayss4 = 0;
+                    for(var i = 0; i < day4.length; i++){
+                        if(day4[i] != "--"){
+                            dayss4 = dayss4 + 1;
+                        }
+                    }
+                    var dayss5 = 0;
+                    for(var i = 0; i < day5.length; i++){
+                        if(day5[i] != "--"){
+                            dayss5 = dayss5 + 1;
+                        }
+                    }
+                    var dayss6 = 0;
+                    for(var i = 0; i < day6.length; i++){
+                        if(day6[i] != "--"){
+                            dayss6 = dayss6 + 1;
+                        }
+                    }
+                    var dayss7 = 0;
+                    for(var i = 0; i < day7.length; i++){
+                        if(day7[i] != "--"){
+                            dayss7 = dayss7 + 1;
+                        }
+                    }
+                    var dayss8 = 0;
+                    for(var i = 0; i < day8.length; i++){
+                        if(day8[i] != "--"){
+                            dayss8 = dayss8 + 1;
+                        }
+                    }
+                    var dayss9 = 0;
+                    for(var i = 0; i < day9.length; i++){
+                        if(day9[i] != "--"){
+                            dayss9 = dayss9 + 1;
+                        }
+                    }
+                    var dayss10 = 0;
+                    for(var i = 0; i < day10.length; i++){
+                        if(day10[i] != "--"){
+                            dayss10 = dayss10 + 1;
+                        }
+                    }
+                    var dayss11 = 0;
+                    for(var i = 0; i < day11.length; i++){
+                        if(day11[i] != "--"){
+                            dayss11 = dayss11 + 1;
+                        }
+                    }
+                    var dayss12 = 0;
+                    for(var i = 0; i < day12.length; i++){
+                        if(day12[i] != "--"){
+                            dayss12 = dayss12 + 1;
+                        }
+                    }
+                    var dayss13 = 0;
+                    for(var i = 0; i < day13.length; i++){
+                        if(day13[i] != "--"){
+                            dayss13 = dayss13 + 1;
+                        }
+                    }
+                    var dayss14 = 0;
+                    for(var i = 0; i < day14.length; i++){
+                        if(day14[i] != "--"){
+                            dayss14 = dayss14 + 1;
+                        }
+                    }
+                    var dayss15 = 0;
+                    for(var i = 0; i < day15.length; i++){
+                        if(day15[i] != "--"){
+                            dayss15 = dayss15 + 1;
+                        }
+                    }
+                    var dayss16 = 0;
+                    for(var i = 0; i < day16.length; i++){
+                        if(day16[i] != "--"){
+                            dayss16 = dayss16 + 1;
+                        }
+                    }
+                    var dayss17 = 0;
+                    for(var i = 0; i < day17.length; i++){
+                        if(day17[i] != "--"){
+                            dayss17 = dayss17 + 1;
+                        }
+                    }var dayss18 = 0;
+                    for(var i = 0; i < day18.length; i++){
+                        if(day18[i] != "--"){
+                            dayss18 = dayss18 + 1;
+                        }
+                    }
+                    var dayss19 = 0;
+                    for(var i = 0; i < day19.length; i++){
+                        if(day19[i] != "--"){
+                            dayss19 = dayss19 + 1;
+                        }
+                    }
+                    var dayss20 = 0;
+                    for(var i = 0; i < day20.length; i++){
+                        if(day20[i] != "--"){
+                            dayss20 = dayss20 + 1;
+                        }
+                    }
+                    var dayss21 = 0;
+                    for(var i = 0; i < day21.length; i++){
+                        if(day21[i] != "--"){
+                            dayss21 = dayss21 + 1;
+                        }
+                    }
+                    var dayss22 = 0;
+                    for(var i = 0; i < day22.length; i++){
+                        if(day22[i] != "--"){
+                            dayss22 = dayss22 + 1;
+                        }
+                    }
+                    var dayss23 = 0;
+                    for(var i = 0; i < day23.length; i++){
+                        if(day23[i] != "--"){
+                            dayss23 = dayss23 + 1;
+                        }
+                    }
+                    var dayss24 = 0;
+                    for(var i = 0; i < day24.length; i++){
+                        if(day24[i] != "--"){
+                            dayss24 = dayss24 + 1;
+                        }
+                    }
+                    var dayss25 = 0;
+                    for(var i = 0; i < day25.length; i++){
+                        if(day25[i] != "--"){
+                            dayss25 = dayss25 + 1;
+                        }
+                    }
+                    var dayss26 = 0;
+                    for(var i = 0; i < day26.length; i++){
+                        if(day26[i] != "--"){
+                            dayss26 = dayss26 + 1;
+                        }
+                    }
+                    var dayss27 = 0;
+                    for(var i = 0; i < day27.length; i++){
+                        if(day27[i] != "--"){
+                            dayss27 = dayss27 + 1;
+                        }
+                    }
+                    var dayss28 = 0;
+                    for(var i = 0; i < day28.length; i++){
+                        if(day28[i] != "--"){
+                            dayss28 = dayss28 + 1;
+                        }
+                    }
+                    var dayss29 = 0;
+                    for(var i = 0; i < day29.length; i++){
+                        if(day29[i] != "--"){
+                            dayss29 = dayss29 + 1;
+                        }
+                    } 
+                    var dayss30 = 0;
+                    for(var i = 0; i < day30.length; i++){
+                        if(day30[i] != "--"){
+                            dayss30 = dayss30 + 1;
+                        }
+                    }
+                    var dayss31 = 0;
+                    for(var i = 0; i < day31.length; i++){
+                        if(day31[i] != "--"){
+                            dayss31 = dayss31 + 1;
+                        }
+                    }
+
+                    var chart = new CanvasJS.Chart("chartContainergraph",
+                    {
+                         backgroundColor: "transparent",
+                        // axisY:{
+                        //     includeZero: false,
+                        //     interlacedColor: "transparent",
+                        //     gridColor: "transparent"
+                        // },
+                        data: [
+                        {
+                            type: "line",
+                            color: "#23b14d",
+                            fillOpacity: .3, 
+                            showInLegend: true,
+                            toolTipContent: "Date-{x} , Attendance-{y}",
+                            dataPoints: [
+                            { x: 01, y: dayss1 },
+                            { x: 02, y: dayss2 },
+                            { x: 03, y: dayss3 },
+                            { x: 04, y: dayss4 },
+                            { x: 05, y: dayss5 },
+                            { x: 06, y: dayss6 },
+                            { x: 07, y: dayss7 },
+                            { x: 08, y: dayss8 },
+                            { x: 09, y: dayss9 },
+                            { x: 10, y: dayss10 },
+                            { x: 11, y: dayss11 },
+                            { x: 12, y: dayss12 },
+                            { x: 13, y: dayss13 },
+                            { x: 14, y: dayss14 },
+                            { x: 15, y: dayss15 },
+                            { x: 16, y: dayss16 },
+                            { x: 17, y: dayss17 },
+                            { x: 18, y: dayss18 },
+                            { x: 19, y: dayss19 },
+                            { x: 20, y: dayss20 },
+                            { x: 21, y: dayss21 },
+                            { x: 22, y: dayss22 },
+                            { x: 23, y: dayss23 },
+                            { x: 24, y: dayss24 },
+                            { x: 25, y: dayss25 },
+                            { x: 26, y: dayss26 },
+                            { x: 27, y: dayss27 },
+                            { x: 28, y: dayss28 },
+                            { x: 29, y: dayss29 },
+                            { x: 30, y: dayss30 },
+                            { x: 31, y: dayss31 }
+                            ]
+                        }
+                        ]
+                    });
+
+                    chart.render();
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+            function getRegisterdEmpCount() {
+
+// var URL = 'http://localhost:50700/api/Employee/GetUserInfoData';
+var URL = 'http://ayanapower-001-site1.itempurl.com/api/Employee/GetUserInfoData';
+$.ajax({
+    type: "GET",
+    url: URL,
+    contentType: "application/json",
+    dataType: "json",
+    success: function (Data) {
+        $("#total").text(Data.length);
+    },
+    "error": function (data) {
+        alert("Some Error Occured!");
+    }
+});
+}
+            function getpresentEmp() {
+
+//var URL = 'http://localhost:50700/api/Employee/GetReportRecog';
+var URL = 'http://ayanapower-001-site1.itempurl.com/api/Employee/GetReportRecog';
+$.ajax({
+    type: "GET",
+    url: URL,
+    contentType: "application/json",
+    dataType: "json",
+    success: function (Data) {
+
+        var resarray = [];
+
+        Data.forEach(function (item) {
+           var i = resarray.findIndex(x => x.UserID == item.userID)
+           if (i <= -1) {
+               resarray.push({ UserID: item.userID, Time: item.recDateTime.substring(10, 19) });
+           }
+        }
+        )
+
+        var count = resarray.length;
+
+        let latecommers = 0;
+        resarray.forEach(function (item) {
+           var pieces = item.Time.split(':')
+           var hour, minute, second;
+           let strinint;
+           if (pieces.length === 3) {
+               hour = parseInt(pieces[0], 10);
+               minute = parseInt(pieces[1], 10);
+               second = parseInt(pieces[2], 10);
+           }
+           if (hour === 10) {
+               if (minute > 30) {
+                   latecommers++;
+               }
+           }
+           else if (hour > 10)
+               latecommers++;
+        });
+        $("#latecommers").text(latecommers);
+        $("#lblpresent").text(count);
+        let total = $("#total").text();
+        let lblpresent = $("#lblpresent").text();
+        let absent = total - lblpresent;
+        $("#absentemp").text(absent);
+    },
+    "error": function (data) {
+        alert("Some Error Occured!");
+    }
+});
+}
+             function getmoduleDefectData() {
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetGetmoduleDefect_Data';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {       
+                    var tbody = document.getElementById('moduletbody');
+                    var tr = "<td>S.NO</td><td>Photo</td><td >Camera ID</td><td >Camera Name</td><td >RecDateTime</td><td>Detection Type</tr>";
+                    tbody.innerHTML = tr;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);'  src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].camera_id + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td>" + Data[i].date.substring(0, 10) + "</td>" + "<td>" + Data[i].detection_type + "</td ></tr>"
+                        tbody.innerHTML += tr;
+                    }                    
+                    $("#loader_module").css('display', 'none');
+                    $("#defect_alert").append(Data.length);
+
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+            function getCleaningData() {
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetCleaningRecord_Data';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {       
+                    var tbody = document.getElementById('cleantbody');
+                    var tr = "<td>S.NO</td><td>Photo</td><td >Camera ID</td><td >Camera Name</td><td >RecDateTime</td><td>Detection Type</tr>";
+                    tbody.innerHTML = tr;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);' src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].camera_id + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td>" + Data[i].date.substring(0, 10) + "</td>" + "<td>" + Data[i].detection_type + "</td ></tr>"
+                        tbody.innerHTML += tr;
+                    }                    
+                    $("#loader_clean").css('display', 'none');
+                    $("#module_alert").append(Data.length);
+
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+            function getDetectionData() {
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetDetection_Data';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {     
+                    var camera = []; 
+                    var detection_type = []; 
+                    var instruction_alert = 0;
+                    for (var i = 0; i < Data.length; i++) {
+
+                        instruction_alert = instruction_alert + parseInt(Data[i].detection_type);
+                        
+                        camera.push(Data[i].camera_id);
+                        detection_type.push(Data[i].detection_type);
+
+                    }  
+                    if(Data.length == 0){
+                        var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        // backgroundColor: "#343434",
+                        backgroundColor: "transparent",
+                        data: [
+                        {
+                            type: "pie",
+                            showInLegend: false,
+                            color: "#23b14d",
+                            dataPoints: [
+                            { y: 01}
+                            ]
+                        }
+                        ]
+                    });
+                    } else{
+                        var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        backgroundColor: "transparent",
+                        legend: {
+                            maxWidth: 350,
+                            itemWidth: 120
+                        },
+                        data: [
+                        {
+                            type: "pie",
+                            showInLegend: false,
+                            toolTipContent: "Camera-{y} , Detection-{indexLabel}",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                            ]
+                        }
+                        ]
+                    });
+                    var length = chart.options.data[0].dataPoints.length;
+                    for (var i = 0; i < camera.length; i++) {
+                        chart.options.data[0].dataPoints.push({ y: camera[i], indexLabel: detection_type[i]});
+                    }
+                    }
+                    
+                    chart.render();                 
+                    $("#loader_intrusion").css('display', 'none');
+                    
+                    $("#instruction_alert").append(instruction_alert);
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+        
+            function getOverGrassData() {
+                $("#loader").css('display', 'block');
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetOverGrass_Data';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {       
+                    var tbody = document.getElementById('vegtbody');
+                    var tr = "<td>S.NO</td><td>Photo</td><td >Camera ID</td><td >Camera Name</td><td >RecDateTime</td><td>Detection Type</tr>";
+                    tbody.innerHTML = tr;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);' src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].camera_id + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td>" + Data[i].date.substring(0, 10) + "</td>" + "<td>" + Data[i].detection_type + "</td ></tr>"
+                        tbody.innerHTML += tr;
+                    }                    
+                    $("#loader").css('display', 'none');
+                    $("#vegetation_alert").append(Data.length);
+
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+            function GetAnprData() {
+                //var URL = 'http://localhost:50700/api/Employee/GetAnprVechileDetaildata';
+                var URL = 'http://ayanapower-001-site1.itempurl.com/api/Employee/GetAnprVechileDetaildata';
+                $.ajax({
+                    type: "GET",
+                    url: URL,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (Data) {
+                        var tbody = document.getElementById('Anprtbody');
+                        var tr = "<td>S.NO</td><td >Photo</td><td >Owner</td><td >LP Number</td><td >Time In</td><td >Time Out</td><td >Duration</td><td >Date</td><td >Vehicle Type</td></tr>";
+                        tbody.innerHTML = tr;
+                        for (var i = 0; i < Data.length; i++) {
+                            let increment = i + 1;
+                            var tr = "<tr>";
+                            tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);' src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].empName + "</td>" + "<td >" + Data[i].cameraName + "</td>" + "<td >" + Data[i].timeIn + "</td>" + "<td >" + Data[i].timeOut + "</td>" + "<td >" + Data[i].duration + "</td>" + "<td >" + Data[i].recDateTime.substring(0, 10) + "</td>" + "<td >" + Data[i].empType + "</td></tr>"
+                            tbody.innerHTML += tr;
+                        }
+                        $("#loader_vehical").css('display', 'none');
+                    },
+                    "error": function (data) {
+                        alert("Some Error Occured!");
+                    }
+                });
+
+            }
+            function getCrowdData() {
+        
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetCrowd_Record';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {       
+                    var tbody = document.getElementById('crowdtbody');
+                    var tr = "<td>S.NO</td><td>Photo</td><td >Camera ID</td><td >Camera Name</td><td >RecDateTime</td><td>Detection Type</tr>";
+                    tbody.innerHTML = tr;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);' src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].camera_id + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td>" + Data[i].date.substring(0, 10) + "</td>" + "<td>" + Data[i].detection_type + "</td ></tr>"
+                        tbody.innerHTML += tr;
+                    }                    
+                    $("#loader_crowd").css('display', 'none');
+                    $("#crowd_alert").append(Data.length);
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+
+            </script>
+
+        <script>
+            function getFireData() {
+               
+            
+            var URL = 'http://ayanapower-001-site1.itempurl.com/api/Fire/GetFire_Record';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {       
+                    var tbody = document.getElementById('tfirebody');
+                    var tr = "<td>S.NO</td><td>Photo</td><td >Camera ID</td><td >Camera Name</td><td >RecDateTime</td><td>Detection Type</tr>";
+                    tbody.innerHTML = tr;
+                    var smoke = 0;
+                    var fire = 0;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img onclick='popUp(this.src);'  src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].camera_id + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td>" + Data[i].date.substring(0, 10) + "</td>" + "<td>" + Data[i].detection_type + "</td ></tr>"
+                        tbody.innerHTML += tr;
+                        
+                            if(Data[i].detection_type == 'Smoke'){
+                                 smoke = smoke + 1;
+                            }else{
+                                 fire = fire + 1;
+                            }
+                    }                    
+                    $("#loader_fire").css('display', 'none');
+                    $("#smoke_alert").text(smoke);
+                    $("#fire_alert").text(fire);
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+            
+        </script>
+        <script>
+            $(".progress").each(function(){
+  
+  var $bar = $(this).find(".bar");
+  var $val = $(this).find("span");
+  var perc = parseInt( $val.text(), 10);
+
+  $({p:0}).animate({p:perc}, {
+    duration: 3000,
+    easing: "swing",
+    step: function(p) {
+      $bar.css({
+        transform: "rotate("+ (1+(p*0.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+        // 45 is to add the needed rotation to have the green borders at the bottom
+      });
+      $val.text(p|0);
+    }
+  });
+});
+        </script>
+<script>$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});</script>
+
+</body>
+</html>

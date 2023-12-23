@@ -1,0 +1,16 @@
+ftp.site4now.net
+newtemplate
+newtemplate
+
+
+http://camfyvisions-001-site1.itempurl.com/api/Employee/GetUserInfoData
+camfyvision-001-site1.btempurl.com/api/Employee/GetReportRecog
+
+
+Live Project API Url :      http://camfyvisions-001-site1.itempurl.com/api/.......
+
+local Project API Url :      http://camfyvision-001-site1.btempurl.com/api/.............
+
+
+http://camfyvisionweb-001-site1.itempurl.com/examples/VechileDetail.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk
+http://camfyvisionweb-001-site1.itempurl.com/newtemplate/main/tables.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk

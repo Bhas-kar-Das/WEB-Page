@@ -1,0 +1,1029 @@
+<!--
+=========================================================
+Material Dashboard - v2.1.2
+=========================================================
+
+Product Page: https://www.creative-tim.com/product/material-dashboard
+Copyright 2020 Creative Tim (https://www.creative-tim.com)
+Coded by Creative Tim
+
+=========================================================
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/Sprn_logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Sprng Energy Pvt. Ltd
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .sidebar .nav p {
+        margin: 0;
+        line-height: 30px;
+        font-size: 13px;
+        position: relative;
+        display: block;
+        height: auto;
+        white-space: nowrap;
+    }
+        .logo-normal img {
+            width: 60%;
+    height: 60%;
+        }
+
+    .numberCircle {
+        color: #424242;
+        text-align: center;
+        font-size: 29px;
+        font-weight: bold;
+        margin: 6px 0px;
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        /* Safari */
+        animation: spin 2s linear infinite;
+        margin-left: 40%;
+        /* z-index: 9999;
+            margin-top: -20%;*/
+    }
+
+    .notify_data {
+        background: #fff;
+        padding: 20px 0px;
+        border-radius: 14px;
+        box-shadow: 0px 7px 16px 1px rgba(0, 0, 0, 0.11);
+        margin-bottom: 20px;
+    }
+
+    .loadergrid {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 60px;
+        height: 60px;
+        -webkit-animation: spin 2s linear infinite;
+        /* Safari */
+        animation: spin 2s linear infinite;
+        margin-left: 40%;
+        z-index: 9999;
+        margin-top: -7%;
+        display: none;
+        position: absolute;
+        left: 7%;
+        top: 63px;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    /*-------------MY STYLE------------*/
+    body {
+        background-image: linear-gradient(180deg, #ffffff, #f2f4ff);
+    }
+
+    .sidebar .nav li a,
+    .sidebar .nav li .dropdown-menu a {
+    
+        border-radius: 3px;
+        color: #ffffff;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-transform: capitalize;
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .sidebar .nav i {
+        font-size: 24px;
+        float: left;
+        margin-right: 15px;
+        line-height: 30px;
+        width: 30px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .sidebar .logo .simple-text {
+        text-transform: uppercase;
+        padding: 5px 0px;
+        display: inline-block;
+        font-size: 18px;
+        color: #ffffff;
+        white-space: nowrap;
+        font-weight: 400;
+        line-height: 30px;
+        overflow: hidden;
+        text-align: center;
+        display: block;
+    }
+
+    .sidebar .nav i {
+        font-size: 19px;
+        float: left;
+        margin-right: 15px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        text-align: center;
+        border-radius: 4px;
+        color: #101840;
+    }
+
+    .sidebar .nav li:hover>a,
+    .sidebar .nav li .dropdown-menu a:hover,
+    .sidebar .nav li .dropdown-menu a:focus,
+    .sidebar .nav li.active>[data-toggle="collapse"] {
+        background-color: rgba(200, 200, 200, 0.2);
+        color: #ffffff;
+        box-shadow: none;
+    }
+
+    .notify_img {
+        width: 80px;
+        margin: 0 auto;
+        display: table;
+    }
+
+    .alert span {
+        max-width: 100%;
+    }
+
+    .notify_category {
+        text-align: center;
+    }
+
+    .alert span b {
+        font-size: 16px;
+        text-transform: lowercase;
+        font-weight: bold;
+    }
+
+    .download_button {
+        background-image: linear-gradient(67deg, #4CAF50, #3de2aa);
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        padding: 12px 0px;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    .valueable {
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .valueable label {
+        font-size: 20px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .table_card {
+        background: #fff;
+        box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.07);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .card-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #11142d;
+    }
+</style>
+
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white" style="background: #2b2b2b">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+                Tip 2: you can also add an image using data-image tag
+            -->
+            <div class="logo">
+                <a href="./new.html" class="simple-text logo-normal">
+                  <img src="../assets/img/spring_fooetr_logo.png">
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./dashboard1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Face Recognition Solution</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./tables1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">content_paste</i>
+                            <p>ANPR Solution</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link"
+                           href="./VehicleDetail1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>
+                                Vehicle Entry-Exit Analysis
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link"
+                           href="./mapping1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">search</i>
+                            <p>Vehicle Mapping</p>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./fire1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Fire & Smoke</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./Detection1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Intrusion Detection</p>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link"
+                           href="./moduleDefect.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Defect Analytics</p>
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./Fall1.html">
+                            <i class="material-icons">dashboard</i>
+                            <p>Human Fall</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./OverGrass1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Vegetation Detection</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./Crowd1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Crowd Detection</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./MonthlyReport1.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Monthly Attendance</p>
+                        </a>
+                    </li>
+
+                    
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link"
+                           href="./notifications.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">notifications</i>
+                            <p>Vehicle Classifications</p>
+                        </a>
+                    </li> -->
+                    
+
+                   
+                    <!-- <li class="nav-item">
+                        <a class="nav-link"
+                           href="./Cleaning.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p>Module Cleaning</p>
+                        </a>
+                    </li> -->
+                    
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./Login.html">
+                            <span class="material-icons-outlined">
+                                <i class="material-icons">logout</i>
+                                <p>logout</p>
+                            </span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+
+                    <div class="collapse navbar-collapse justify-content-end">
+
+                        <ul class="navbar-nav">
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="">
+                <div class="container-fluid">
+                    <div class="card">
+
+                        <div class="card-body" style="padding:20px;">
+                            <div class="row">
+                                <div class="col-md-10 col-sm-offset-1" style="page-break-before:always">
+                                    <!--<h4 class="card-title">Notification states</h4>-->
+                                    <div class="alert row">
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/car.png">
+                                                <div class="numberCircle" id="carcount">0</div>
+                                                <div>
+                                                    <div class="numberCircle" id="carcount"></div>
+                                                    <span class="notify_category"><b>car</b></span>
+                                                    <span class="valueable" id=""> <label
+                                                            id="objcarcountspan">0</label>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/bike.png">
+                                                <div class="numberCircle" id="bikecount">0</div>
+                                                <span class="notify_category"><b>Bike</b></span>
+                                                <span class="valueable" id=""><label
+                                                        id="objbikecountspan">0</label>%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/truck.png">
+                                                <div class="numberCircle" id="truckcount">0</div>
+                                                <span class="notify_category"><b>Truck</b></span>
+                                                <span class="valueable" id=""> <label
+                                                        id="objtruckcountspan">0</label>%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/van.png">
+                                                <div class="numberCircle" id="vancount">0</div>
+                                                <span class="notify_category"><b>Van</b></span>
+                                                <span class="valueable" id=""><label
+                                                        id="objvancountspan">0</label>%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/cycle.png">
+                                                <div class="numberCircle" id="cyclecount">0</div>
+                                                <span class="notify_category"><b>Cycle</b></span>
+                                                <span class="valueable" id=""><label
+                                                        id="objcyclecountspan">0</label>%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="notify_data">
+                                                <img class="notify_img" src="../assets/img/tractor.png">
+                                                <div class="numberCircle" id="tractorcount">0</div>
+                                                <span class="notify_category"><b>Tractor</b></span>
+                                                <span class="valueable" id=""><label
+                                                        id="objtractorcountspan">0</label>%</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-10 col-sm-offset-1">
+                                    <div class="table_card">
+                                        <div class="card-title">
+                                            <h4 class="card-title">Download Report</h4>
+                                        </div>
+                                        <!-- <div class="card-body table-responsive">
+                                        </div> -->
+                                        <div class="form-group pt-3">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' name="datetimepicker1" class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker2'>
+                                                <input type='text' name="datetimepicker2" class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div id="cmd" class="download_button"> Download Report</lable>
+                                            <i id="cmd" class="fa fa-file-text fa-1x" aria-hidden="true"></i>
+                                            <div id="loadergrid" class="loadergrid"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive" id="reportcontents" style="display:none">
+                <span style="text-align: center;font-size: 14px;left: 0; margin-left: 43%; font-weight: bold;">
+                    (Ayana
+                    Power, Karnataka,
+                    India)
+                </span>
+                <br />
+                <span style="text-align:left" id="startdate"></span>
+                <br />
+                <span style="text-align:left" id="enddate"></span>
+                <table id="tab_customers" class="table table-hover table-bordered table-striped"
+                    style="border-collapse: collapse; width: 100%;" border="1">
+                    <tbody id="reporttbody">
+                    </tbody>
+                </table>
+
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, powered by
+                        <a href="" target="_blank">CamfyVision Innovations</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="fixed-plugin">
+        <div class="dropdown show-dropdown">
+            <!--<a href="#" data-toggle="dropdown">
+              <i class="fa fa-cog fa-2x"> </i>
+            </a>-->
+            <ul class="dropdown-menu">
+                <li class="header-title"> Sidebar Filters</li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger active-color">
+                        <div class="badge-colors ml-auto mr-auto">
+                            <span class="badge filter badge-purple" data-color="purple"></span>
+                            <span class="badge filter badge-azure" data-color="azure"></span>
+                            <span class="badge filter badge-green" data-color="green"></span>
+                            <span class="badge filter badge-warning" data-color="orange"></span>
+                            <span class="badge filter badge-danger" data-color="danger"></span>
+                            <span class="badge filter badge-rose active" data-color="rose"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="header-title">Images</li>
+                <li class="active">
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="../assets/img/sidebar-1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="../assets/img/sidebar-2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="../assets/img/sidebar-3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="../assets/img/sidebar-4.jpg" alt="">
+                    </a>
+                </li>
+                <li class="button-container">
+                    <a href="" target="_blank" class="btn btn-primary btn-block">Free Download</a>
+                </li>
+                <!-- <li class="header-title">Want more components?</li>
+                    <li class="button-container">
+                        <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
+                          Get the pro version
+                        </a>
+                    </li> -->
+                <li class="button-container">
+                    <a href="" target="_blank" class="btn btn-default btn-block">
+                        View Documentation
+                    </a>
+                </li>
+                <li class="button-container github-star">
+                    <a class="github-button" href="" data-icon="octicon-star" data-size="large" data-show-count="true"
+                        aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                </li>
+                <li class="header-title">Thank you for 95 shares!</li>
+                <li class="button-container text-center">
+                    <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot;
+                        45</button>
+                    <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot;
+                        50</button>
+                    <br>
+                    <br>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Plugin for the momentJs  -->
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script src="../assets/js/plugins/sweetalert2.js"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+    <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="../assets/js/plugins/arrive.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Chartist JS -->
+    <script src="../assets/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/demo/demo.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <script>
+        if (sessionStorage.getItem('AuthenticationState') === null) {
+            window.open("AccessDenied.html", "_self");
+              }
+           //Is their authentication token still valid?
+            else if (Date.now > new Date(sessionStorage.getItem('AuthenticationExpires'))) {
+             window.open("AccessDenied.html", "_self");
+            }
+            else {
+
+
+
+
+
+        var date = new Date();
+        var startdatePicker = moment(date).format('DD/MM/YYYY');
+        var enddatePicker = moment(date).format('DD/MM/YYYY');
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                defaultDate: new Date()
+            }).on('dp.change', function (event) {
+                enddatePicker = event.date.format('DD/MM/YYYY');
+            });
+
+        });
+
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                defaultDate: new Date()
+
+            }).on('dp.change', function (event) {
+                startdatePicker = event.date.format('DD/MM/YYYY');
+            });
+        });
+
+        $(document).ready(function () {
+            let searchParams = new URLSearchParams(window.location.search)
+            if (searchParams.get('ackrwiejhynvhfro82wue') !== 'qoiwuehrncmjdkjkdlfjksdjfkskdjfk') {
+               // window.location = "http://camfyvisionweb-001-site1.itempurl.com/examples/dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk";
+            }
+
+            $().ready(function () {
+                $sidebar = $('.sidebar');
+
+                $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+                $full_page = $('.full-page');
+
+                $sidebar_responsive = $('body > .navbar-collapse');
+
+                window_width = $(window).width();
+
+                fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+                if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                    if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                        $('.fixed-plugin .dropdown').addClass('open');
+                    }
+
+                }
+
+                $('.fixed-plugin a').click(function (event) {
+                    // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                    if ($(this).hasClass('switch-trigger')) {
+                        if (event.stopPropagation) {
+                            event.stopPropagation();
+                        } else if (window.event) {
+                            window.event.cancelBubble = true;
+                        }
+                    }
+                });
+
+                $('.fixed-plugin .active-color span').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-color', new_color);
+                    }
+
+                    if ($full_page.length != 0) {
+                        $full_page.attr('filter-color', new_color);
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.attr('data-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .background-color .badge').click(function () {
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('background-color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-background-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .img-holder').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).parent('li').siblings().removeClass('active');
+                    $(this).parent('li').addClass('active');
+
+
+                    var new_image = $(this).find("img").attr('src');
+
+                    if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        $sidebar_img_container.fadeOut('fast', function () {
+                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                            $sidebar_img_container.fadeIn('fast');
+                        });
+                    }
+
+                    if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $full_page_background.fadeOut('fast', function () {
+                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                            $full_page_background.fadeIn('fast');
+                        });
+                    }
+
+                    if ($('.switch-sidebar-image input:checked').length == 0) {
+                        var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                    }
+                });
+
+                $('.switch-sidebar-image input').change(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $input = $(this);
+
+                    if ($input.is(':checked')) {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar_img_container.fadeIn('fast');
+                            $sidebar.attr('data-image', '#');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page_background.fadeIn('fast');
+                            $full_page.attr('data-image', '#');
+                        }
+
+                        background_image = true;
+                    } else {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar.removeAttr('data-image');
+                            $sidebar_img_container.fadeOut('fast');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page.removeAttr('data-image', '#');
+                            $full_page_background.fadeOut('fast');
+                        }
+
+                        background_image = false;
+                    }
+                });
+
+                $('.switch-sidebar-mini input').change(function () {
+                    $body = $('body');
+
+                    $input = $(this);
+
+                    if (md.misc.sidebar_mini_active == true) {
+                        $('body').removeClass('sidebar-mini');
+                        md.misc.sidebar_mini_active = false;
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                    } else {
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                        setTimeout(function () {
+                            $('body').addClass('sidebar-mini');
+
+                            md.misc.sidebar_mini_active = true;
+                        }, 300);
+                    }
+
+                    // we simulate the window Resize so the charts will get updated in realtime.
+                    var simulateWindowResize = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 180);
+
+                    // we stop the simulation of Window Resize after the animations are completed
+                    setTimeout(function () {
+                        clearInterval(simulateWindowResize);
+                    }, 1000);
+
+                });
+            });
+            GetVehicleData();
+        });
+
+        function getReport(filtrtype, fromdate, enddate) {
+            debugger;
+            $("#loadergrid").css('display', 'block');
+            $('#startdate').text('From : ' + fromdate);
+            $('#enddate').text('To : ' + enddate);
+            //var URL = 'http://localhost:50700/api/Employee/GetReportByNotificationFilter?filterType=' + filtrtype + '&startdate=' + fromdate + '&enddate=' + enddate;
+            var URL = 'https://49.205.196.123:8082/api/Employee/GetReportByNotificationFilter?filterType=' + filtrtype + '&startdate=' + fromdate + '&enddate=' + enddate;
+
+
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {
+                    var tbody = document.getElementById('reporttbody');
+                    var tr = "<tr><th>S.NO</th><th >Name</th><th >Camera</th><th >Date</th><th >Time</th></tr>";
+                    tbody.innerHTML = tr;
+                    for (var i = 0; i < Data.length; i++) {
+                        let increment = i + 1;
+                        var tr = "<tr>";
+                        tr += "<td >" + increment + "</td>" + "<td >" + Data[i].name + "</td>" + "<td >" + Data[i].camera + "</td>" + "<td >" + Data[i].date + "</td>" + "<td >" + Data[i].time + "</td></tr>"
+                        tbody.innerHTML += tr;
+                    }
+                    $("#loadergrid").css('display', 'none');
+                    
+                    printPdf();
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+
+        function GetVehicleData() {
+            //var URL = 'http://localhost:50700/api/Employee/GetVehicleData';
+            var URL = 'https://49.205.196.123:8082/api/Employee/GetVehicleData';
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (Data) {
+                    debugger;
+                    $("#lbltotalcount").text(Data.length);
+
+                    var carcount = 0;
+                    var motorbikecount = 0;
+                    var buscount = 0;
+                    var truckcount = 0;
+                    var bicyclecount = 0;
+                    var tractorcount = 0;
+                    var resarray = [];
+                    Data.forEach(function (item) {
+
+                        if (item.name === 'car') {
+                            carcount++;
+                        }
+                        else if (item.name === 'motorbike') {
+                            motorbikecount++;
+                        }
+                        else if (item.name === 'truck') {
+                            truckcount++;
+                        }
+                        else if (item.name === 'bus') {
+                            buscount++;
+                        }
+                        else if (item.name === 'bicycle') {
+                            bicyclecount++;
+                        }
+                        else if (item.name === 'tractor') {
+                            tractorcount++;
+                        }
+                    }
+
+                    )
+
+                    $("#carcount").text(carcount);
+                    $("#cyclecount").text(bicyclecount);
+                    $("#truckcount").text(truckcount);
+                    $("#vancount").text(buscount);
+                    $("#bikecount").text(motorbikecount);
+                    $("#tractorcount").text(tractorcount);
+
+                    $("#objcarcount").text(carcount);
+                    $("#objtruckcount").text(truckcount);
+                    $("#objvancount").text(buscount);
+                    $("#objcyclecount").text(motorbikecount);
+                    $("#objbycyclecount").text(bicyclecount);
+                    $("#objtractorcount").text(tractorcount);
+
+                    $('#objcarcountPercentile').val(carcount * 100 / Data.length);
+                    $('#objtruckcountPercentile').val(truckcount * 100 / Data.length);
+                    $('#objbikecountPercentile').val(motorbikecount * 100 / Data.length);
+                    $('#objcyclecountPercentile').val(bicyclecount * 100 / Data.length);
+
+                    $('#objvancountPercentile').val(buscount * 100 / Data.length);
+                    $('#objtractorcountPercentile').val(tractorcount * 100 / Data.length);
+
+                    var objcarcountspan = (carcount * 100 / Data.length);
+                    objcarcountspan = objcarcountspan.toFixed(2);
+                    $('#objcarcountspan').text(objcarcountspan);
+
+                    var objtruckcountspan = (truckcount * 100 / Data.length);
+                    objtruckcountspan = objtruckcountspan.toFixed(2);
+                    $('#objtruckcountspan').text(objtruckcountspan);
+
+                    var objbikecountspan = (motorbikecount * 100 / Data.length);
+                    objbikecountspan = objbikecountspan.toFixed(2);
+                    $('#objbikecountspan').text(objbikecountspan);
+
+                    var objcyclecountspan = (bicyclecount * 100 / Data.length);
+                    objcyclecountspan = objcyclecountspan.toFixed(2);
+                    $('#objcyclecountspan').text(objcyclecountspan);
+
+                    var objvancountspan = (buscount * 100 / Data.length);
+                    objvancountspan = objvancountspan.toFixed(2);
+                    $('#objvancountspan').text(objvancountspan);
+
+                    var objtractorcountspan = (tractorcount * 100 / Data.length);
+                    objtractorcountspan = objtractorcountspan.toFixed(2);
+                    $('#objtractorcountspan').text(objtractorcountspan);
+
+                },
+                "error": function (data) {
+                    alert("Some Error Occured!");
+                }
+            });
+        }
+
+        function printPdf() {
+            var mywindow = window.open('', 'my div', 'height=400,width=600');
+            var data = $('#reportcontents')[0];
+            var additioncss = '<style>table tr td{text-align:center; font-size:12px;} table tr th{text-align:center; font-weight:bold; font-size:13px;} .imgtd{width: 50px;}</style>';
+            mywindow.document.head.innerHTML = '<title>Vehicle Analytics-Vehicle Classifications Report</title><link rel="stylesheet" href="css/main.css" type="text/css" />' + additioncss;
+            mywindow.document.body.innerHTML = '<body>' + data.innerHTML + '</body>';
+            mywindow.document.close();
+            mywindow.focus(); // necessary for IE >= 10
+            mywindow.print();
+            mywindow.close();
+            return true;
+        }
+
+        $('#cmd').click(function () {
+            getReport($('#dropdownMenuButton').text().trim(), startdatePicker, enddatePicker);
+        });
+    }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            //init DateTimePickers
+            md.initFormExtendedDatetimepickers();
+        });
+
+       
+    </script>
+</body>
+
+</html>
